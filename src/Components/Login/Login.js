@@ -4,7 +4,7 @@ import useFirebase from '../../hooks/useFirebase';
 
 
 const Login = () => {
-    const {signInUsingGoogle,signInUsingGitHub}=useFirebase()
+    const {signInUsingGoogle,signInUsingGitHub,error}=useFirebase()
     return (
         <div>
             <h2>Please Login</h2>
@@ -12,6 +12,7 @@ const Login = () => {
             <br />
             <button onClick={signInUsingGitHub}>GitHub Sign in</button>
             <br />
+            <h4 className='text-danger text-center'>{error}</h4>
             <Link to='/register'>New user?</Link>
         </div>
     );

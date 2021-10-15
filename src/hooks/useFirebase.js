@@ -13,7 +13,7 @@ const useFirebase=()=>{
         signInWithPopup(auth,googleProvider)
         .then(result=>{
             setUser(result.user)
-            console.log(result.user);
+            setError('')
         }).catch(error=>{
             setError(error.message)
         })
@@ -22,7 +22,9 @@ const useFirebase=()=>{
         signInWithPopup(auth,gitHubProvider)
         .then(result=>{
             setUser(result.user)
-            console.log(result.user);
+            setError('')
+        }).catch(error=>{
+            setError(error.message)
         })
     }
     const logOut=()=>{
